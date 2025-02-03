@@ -1,15 +1,13 @@
-import { Text, View } from "react-native";
+import { Button } from "react-native-paper";
+import { router, Stack } from "expo-router";
+import { TodoList } from "@/feature/todos/TodoList";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <Button onPress={() => router.navigate("/create")}>Add new</Button>
+      <TodoList />
+    </>
   );
 }
